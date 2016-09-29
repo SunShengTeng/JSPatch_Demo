@@ -15,6 +15,9 @@
 		D6D3357F1D9D19DE0035A034 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6D3357D1D9D19DE0035A034 /* LaunchScreen.storyboard */; };
 		D6D3358A1D9D19DE0035A034 /* JSPatch_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D335891D9D19DE0035A034 /* JSPatch_DemoTests.m */; };
 		D6D335951D9D19DE0035A034 /* JSPatch_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D335941D9D19DE0035A034 /* JSPatch_DemoUITests.m */; };
+		D6D335E31D9D1D810035A034 /* JSPatchPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D335E21D9D1D810035A034 /* JSPatchPlatform.framework */; };
+		D6D335E51D9D1D940035A034 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D335E41D9D1D940035A034 /* JavaScriptCore.framework */; };
+		D6D335E71D9D1D9E0035A034 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D335E61D9D1D9E0035A034 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		D6D335901D9D19DE0035A034 /* JSPatch_DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSPatch_DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6D335941D9D19DE0035A034 /* JSPatch_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSPatch_DemoUITests.m; sourceTree = "<group>"; };
 		D6D335961D9D19DE0035A034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6D335E21D9D1D810035A034 /* JSPatchPlatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSPatchPlatform.framework; sourceTree = "<group>"; };
+		D6D335E41D9D1D940035A034 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/PrivateFrameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		D6D335E61D9D1D9E0035A034 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6D335E71D9D1D9E0035A034 /* libz.tbd in Frameworks */,
+				D6D335E51D9D1D940035A034 /* JavaScriptCore.framework in Frameworks */,
+				D6D335E31D9D1D810035A034 /* JSPatchPlatform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +90,9 @@
 		D6D335631D9D19DE0035A034 = {
 			isa = PBXGroup;
 			children = (
+				D6D335E61D9D1D9E0035A034 /* libz.tbd */,
+				D6D335E41D9D1D940035A034 /* JavaScriptCore.framework */,
+				D6D335E11D9D1D6A0035A034 /* Lib */,
 				D6D3356E1D9D19DE0035A034 /* JSPatch_Demo */,
 				D6D335881D9D19DE0035A034 /* JSPatch_DemoTests */,
 				D6D335931D9D19DE0035A034 /* JSPatch_DemoUITests */,
@@ -138,6 +150,14 @@
 				D6D335961D9D19DE0035A034 /* Info.plist */,
 			);
 			path = JSPatch_DemoUITests;
+			sourceTree = "<group>";
+		};
+		D6D335E11D9D1D6A0035A034 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				D6D335E21D9D1D810035A034 /* JSPatchPlatform.framework */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +433,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = JSPatch_Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "https---github.com-sunshengteng.JSPatch-Demo";
@@ -424,6 +449,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 				INFOPLIST_FILE = JSPatch_Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "https---github.com-sunshengteng.JSPatch-Demo";
@@ -498,6 +528,7 @@
 				D6D3359B1D9D19DE0035A034 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6D3359C1D9D19DE0035A034 /* Build configuration list for PBXNativeTarget "JSPatch_DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +537,7 @@
 				D6D3359E1D9D19DE0035A034 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6D3359F1D9D19DE0035A034 /* Build configuration list for PBXNativeTarget "JSPatch_DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +546,7 @@
 				D6D335A11D9D19DE0035A034 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
